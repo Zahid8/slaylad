@@ -1,33 +1,43 @@
-# Deploy SLAY'LAD to Vercel
+# Deploy SLAY'LAD to Vercel with a Hostinger Domain
 
-This guide explains every step required to deploy the SLAY'LAD digital business card from GitHub to Vercel and keep it updated automatically.
+This guide covers the complete deployment of the SLAY'LAD digital business card from GitHub to Vercel. The domain is registered and managed through Hostinger.
+
+The recommended public address is:
+
+```text
+https://card.slaylad.com
+```
+
+Using `card.slaylad.com` keeps the current website at `www.slaylad.com` unchanged.
 
 ## Project deployment details
 
-Use these exact settings for this repository:
+Use these exact settings:
 
 | Setting | Value |
 | --- | --- |
 | GitHub repository | `https://github.com/Zahid8/slaylad` |
 | Production branch | `main` |
 | Framework preset | `Other` |
-| Root directory | `./` or leave unchanged |
-| Install command | Leave empty |
-| Build command | Leave empty |
-| Output directory | Leave empty |
-| Environment variables | None required |
+| Root directory | `./` |
+| Install command | Empty |
+| Build command | Empty |
+| Output directory | Empty |
+| Environment variables | None |
+| Recommended domain | `card.slaylad.com` |
+| DNS provider | Hostinger |
 
-The project is a static website made from `index.html`, `styles.css`, and `script.js`. It does not use Node.js, React, Next.js, or a build process.
+This is a static HTML, CSS and JavaScript project. It does not need Node.js, React, Next.js, an installation command or a build process.
 
 ## Part 1: Check the website locally
 
-### Step 1: Open a terminal in the project directory
+### Step 1: Open the project directory
 
 ```bash
 cd /home/zahid/Projects/Zahid/slaylad
 ```
 
-### Step 2: Start a local web server
+### Step 2: Start the local server
 
 ```bash
 python3 -m http.server 4173
@@ -35,20 +45,20 @@ python3 -m http.server 4173
 
 ### Step 3: Open the local website
 
-Visit:
+Open this address in a browser:
 
 ```text
 http://localhost:4173
 ```
 
-Check the following items:
+Check that:
 
-1. The page displays correctly on desktop and mobile.
-2. **Order a single meal** opens the SLAY'LAD Zomato page.
-3. **Planning a bulk order?** opens WhatsApp with a prepared message.
-4. The call, Instagram, website, save-contact and bulk-menu buttons work.
+1. The card displays correctly on a phone, tablet and desktop.
+2. **Order a single meal** opens Zomato.
+3. **Planning a bulk order?** opens WhatsApp.
+4. Call, Instagram, website, bulk-menu and save-contact actions work.
 
-### Step 4: Stop the local server
+### Step 4: Stop the server
 
 Return to the terminal and press:
 
@@ -58,9 +68,7 @@ Ctrl+C
 
 ## Part 2: Push the project to GitHub
 
-Vercel can only deploy the latest GitHub version after the changes have been pushed. A commit that exists only on your computer will not update Vercel.
-
-### Step 1: Confirm the Git branch
+### Step 1: Confirm the current branch
 
 ```bash
 git branch --show-current
@@ -72,107 +80,112 @@ The result should be:
 main
 ```
 
-### Step 2: Review the changed files
+### Step 2: Review the changes
 
 ```bash
 git status
 ```
 
-### Step 3: Add the project files to the commit
+### Step 3: Add every change
 
 ```bash
-git add index.html styles.css script.js vercel.json README.md deploy.md .agent/CONTINUITY.md graphify-out
+git add .
 ```
 
-The uploaded reference image is not used by the deployed site. Add it separately only if you want to keep it in GitHub:
+### Step 4: Commit the changes
 
 ```bash
-git add ref.jpeg
+git commit -m "Update SLAY'LAD digital business card"
 ```
 
-### Step 4: Create a commit
+If Git reports `nothing to commit`, the files are already committed.
 
-```bash
-git commit -m "Add SLAY'LAD digital business card"
-```
-
-If Git reports `nothing to commit`, the latest files are already committed and you can continue.
-
-### Step 5: Push the commit to GitHub
+### Step 5: Push to GitHub
 
 ```bash
 git push origin main
 ```
 
-### Step 6: Confirm the files on GitHub
+A commit stored only on the computer cannot trigger Vercel. The commit must be pushed to GitHub.
+
+### Step 6: Confirm the GitHub repository
 
 Open:
 
 <https://github.com/Zahid8/slaylad>
 
-Confirm that `index.html`, `styles.css`, `script.js`, `vercel.json`, and `deploy.md` are visible on the `main` branch.
+Confirm that `index.html`, `styles.css`, `script.js`, `vercel.json` and `deploy.md` appear on the `main` branch.
 
-## Part 3: Create the Vercel deployment
+## Part 3: Import the project into Vercel
 
 ### Step 1: Sign in to Vercel
 
 1. Open <https://vercel.com>.
 2. Select **Log In** or **Sign Up**.
-3. Choose **Continue with GitHub**.
-4. Sign in to the GitHub account that has access to `Zahid8/slaylad`.
-5. Approve the Vercel GitHub integration if GitHub asks for permission.
+3. Select **Continue with GitHub**.
+4. Sign in to the GitHub account that can access `Zahid8/slaylad`.
+5. Approve the Vercel GitHub integration if GitHub asks for authorization.
 
-### Step 2: Start a new Vercel project
+### Step 2: Create the Vercel project
 
 1. Open the Vercel dashboard.
 2. Select **Add New...**.
 3. Select **Project**.
-4. Find the repository named **slaylad**.
-5. Select **Import** next to `Zahid8/slaylad`.
+4. Find `Zahid8/slaylad` in the Git repository list.
+5. Select **Import** beside the repository.
 
-If the repository is not listed:
+If `Zahid8/slaylad` is not listed:
 
-1. Select **Adjust GitHub App Permissions** or **Configure GitHub App**.
-2. In GitHub, allow Vercel to access the `slaylad` repository.
-3. Return to Vercel and refresh the repository list.
-4. Select **Import** next to the repository.
+1. Select **Configure GitHub App** or **Adjust GitHub App Permissions**.
+2. Allow Vercel to access the `slaylad` repository.
+3. Return to Vercel.
+4. Refresh the repository list.
+5. Select **Import** beside `Zahid8/slaylad`.
+
+Official reference: [Import a project into Vercel](https://vercel.com/docs/getting-started-with-vercel/import).
 
 ### Step 3: Configure the project
 
-On the **Configure Project** screen, use these values:
+On the **Configure Project** screen, enter the following:
 
-1. **Project Name:** enter `slaylad` or another available name.
+1. **Project Name:** `slaylad` or another available name.
 2. **Framework Preset:** select **Other**.
-3. **Root Directory:** keep the repository root selected. It may appear as `./`.
+3. **Root Directory:** keep `./`, which is the repository root.
 4. Expand **Build and Output Settings**.
-5. **Build Command:** leave it empty. If an override switch is enabled, disable it.
-6. **Output Directory:** leave it empty. If an override switch is enabled, disable it.
-7. **Install Command:** leave it empty. If an override switch is enabled, disable it.
-8. Do not add environment variables because this project does not require any.
+5. **Build Command:** leave this empty.
+6. If Vercel automatically fills a build command, enable its override and clear the field so the final value is empty.
+7. **Output Directory:** leave this empty and do not enter `public`, `dist` or `build`.
+8. **Install Command:** leave this empty.
+9. Do not add environment variables.
 
-Do not enter `public`, `dist`, `build`, or another output folder. The deployable `index.html` is already in the repository root.
+The deployable `index.html` is already in the repository root. Vercel does not need to generate an output folder.
 
-### Step 4: Deploy
+Official reference: [Configure a Vercel build](https://vercel.com/docs/builds/configure-a-build).
+
+### Step 4: Deploy the project
 
 1. Select **Deploy**.
-2. Wait for the deployment to finish.
-3. Vercel should display a success screen with a preview of the website.
+2. Wait while Vercel creates the deployment.
+3. The deployment should finish with a success message.
 4. Select **Continue to Dashboard**.
+5. Open the generated Vercel address.
 
-Vercel will provide a production address similar to:
+The initial address will look similar to:
 
 ```text
 https://slaylad.vercel.app
 ```
 
-The precise address depends on whether that project name is available.
+The exact name can differ if `slaylad.vercel.app` is already assigned.
 
-## Part 4: Verify the production website
+## Part 4: Verify the Vercel deployment
 
-Open the Vercel production address and test all of the following:
+Do not change the Hostinger DNS records until the `.vercel.app` website works correctly.
 
-1. The green `SLAY'LAD` logo appears at the top.
-2. The page is not horizontally cropped on a phone.
+Open the Vercel address and verify:
+
+1. The green `SLAY'LAD` wordmark appears without an icon above it.
+2. The card is not horizontally cropped on a phone or tablet.
 3. **Order a single meal** opens:
 
    ```text
@@ -180,25 +193,146 @@ Open the Vercel production address and test all of the following:
    ```
 
 4. **Planning a bulk order?** opens WhatsApp for `+91 99994 98579`.
-5. **View bulk menu** opens the WhatsApp catalog.
+5. **View bulk menu** opens the WhatsApp catalogue.
 6. **Instagram** opens `@slaylad_india`.
 7. **Website** opens `https://www.slaylad.com`.
-8. **Call** opens the phone dialler on a mobile device.
+8. **Call** opens a phone dialler on a mobile device.
 9. **Save contact** downloads `slaylad-contact.vcf`.
-10. The share button opens the device share menu or copies the card link.
+10. The share button opens the device share interface or copies the card URL.
 
-## Part 5: Confirm automatic GitHub deployments
+Continue only after these checks pass.
 
-After the GitHub repository has been imported, Vercel deploys Git pushes automatically.
+## Part 5: Add `card.slaylad.com` to Vercel
 
-### Production updates
+### Step 1: Open the domain settings
 
-Changes pushed to `main` should create a new production deployment:
+1. Open the Vercel dashboard.
+2. Select the **slaylad** project.
+3. Open **Settings**.
+4. Open **Domains**.
+
+### Step 2: Add the subdomain
+
+1. Enter:
+
+   ```text
+   card.slaylad.com
+   ```
+
+2. Select **Add**.
+3. Vercel will report that the DNS configuration must be updated.
+4. Keep this page open.
+
+Vercel will show the exact CNAME target required for the domain. Copy the value shown in your own Vercel dashboard. Do not guess or replace that target with a value from another project.
+
+Official reference: [Set up a custom domain on Vercel](https://vercel.com/docs/domains/set-up-custom-domain).
+
+## Part 6: Open the DNS Zone Editor in Hostinger
+
+The correct Hostinger navigation depends on whether the account has a web-hosting plan or only the domain.
+
+### Option A: The account has a Hostinger hosting plan
+
+1. Sign in at <https://hpanel.hostinger.com>.
+2. Open **Websites**.
+3. Select the website associated with `slaylad.com`.
+4. Open **Advanced**.
+5. Select **DNS Zone Editor**.
+
+The interface may also display the path as:
+
+```text
+Websites → Dashboard → Advanced → DNS Zone Editor
+```
+
+### Option B: The account contains only the domain
+
+1. Sign in at <https://hpanel.hostinger.com>.
+2. Open **Domains**.
+3. Select `slaylad.com`.
+4. Open **DNS / Nameservers**.
+5. Open the **DNS records** section.
+
+### Confirm that Hostinger controls the active DNS
+
+Before editing records, confirm the domain uses Hostinger nameservers. If the domain uses nameservers from another provider, DNS changes made in Hostinger will not become active; make the CNAME change at the provider named by the active nameservers instead.
+
+Official reference: [Hostinger DNS Zone Editor](https://www.hostinger.com/support/how-to-use-hostingers-dns-zone-editor/).
+
+## Part 7: Create the CNAME record in Hostinger
+
+### Step 1: Check for an existing `card` record
+
+1. Search the DNS record list for `card`.
+2. If no record named `card` exists, create a new record.
+3. If a `card` record already exists, edit that record or remove only that conflicting record before creating the new CNAME.
+
+Do not remove the root `@` record, `www` record, MX records or email-related TXT/CNAME records.
+
+### Step 2: Enter the CNAME record
+
+In **Manage DNS Records**, enter:
+
+| Hostinger field | Exact value |
+| --- | --- |
+| Type | `CNAME` |
+| Name / Host | `card` |
+| Target / Points to | The exact target displayed by Vercel |
+| TTL | Leave the Hostinger default, normally `14400` |
+
+Important rules:
+
+1. Enter only `card` in **Name / Host**. Hostinger automatically appends `.slaylad.com`.
+2. Do not enter `card.slaylad.com` in the Name field.
+3. Do not include `https://` in the Target field.
+4. Do not add a slash at the end of the Target.
+5. The target must be a hostname, not a full web URL.
+
+### Step 3: Save the record
+
+1. Select **Add Record** or **Save**.
+2. Confirm that a CNAME record for `card` now appears in the DNS list.
+3. Do not change Hostinger nameservers merely to connect the Vercel subdomain.
+
+Official reference: [Manage CNAME records at Hostinger](https://www.hostinger.com/support/4738777-how-to-manage-cname-records-at-hostinger/).
+
+## Part 8: Verify the domain and HTTPS
+
+### Step 1: Return to Vercel
+
+1. Open **Vercel → slaylad → Settings → Domains**.
+2. Find `card.slaylad.com`.
+3. Select **Refresh** if that action is available.
+4. Wait for the domain to show **Valid Configuration**.
+
+### Step 2: Allow DNS propagation
+
+Hostinger states that DNS changes can take up to 24 hours to propagate globally. The change may appear sooner, but do not repeatedly replace the correct record while propagation is in progress.
+
+### Step 3: Confirm HTTPS
+
+After Vercel reports a valid configuration, open:
+
+```text
+https://card.slaylad.com
+```
+
+Vercel provisions the HTTPS certificate after the DNS configuration is valid. Confirm the browser shows a secure connection and does not display a certificate warning.
+
+### Step 4: Repeat the functional checks
+
+Test the Zomato, WhatsApp, call, Instagram, website, bulk-menu, contact-download and share actions again on the custom domain.
+
+## Part 9: Confirm automatic deployments
+
+Vercel deploys new pushes from the connected GitHub repository automatically.
+
+For every future change, run:
 
 ```bash
 cd /home/zahid/Projects/Zahid/slaylad
 git add .
-git commit -m "Describe the website update"
+git commit -m "Describe the website change"
 git push origin main
 ```
 
@@ -207,210 +341,126 @@ Then:
 1. Open the Vercel dashboard.
 2. Select the **slaylad** project.
 3. Open **Deployments**.
-4. Wait for the newest deployment to show **Ready**.
-5. Refresh the production website.
+4. Wait for the latest deployment to show **Ready** and **Production**.
+5. Refresh `https://card.slaylad.com`.
 
-### Preview deployments
+If a push to `main` produces only a preview deployment:
 
-If you push another branch, Vercel creates a preview deployment instead of replacing production:
-
-```bash
-git switch -c preview-change
-git push -u origin preview-change
-```
-
-Vercel will provide a separate preview URL. Merge the branch into `main` when the change is ready for production.
-
-### Check the production branch setting
-
-If pushes to `main` create previews instead of updating production:
-
-1. Open the Vercel project.
-2. Open **Settings**.
-3. Open **Git**.
-4. Find **Production Branch**.
-5. Set it to `main`.
-6. Save the setting.
+1. Open **Vercel → slaylad → Settings → Git**.
+2. Confirm the connected repository is `Zahid8/slaylad`.
+3. Find **Production Branch**.
+4. Set it to `main`.
+5. Save the setting.
 
 Official reference: [Vercel Git deployments](https://vercel.com/docs/deployments/git).
 
-## Part 6: Connect a custom domain
+## Part 10: Replacing the existing main website
 
-### Recommended option: use `card.slaylad.com`
+Skip this part when using `card.slaylad.com`.
 
-`www.slaylad.com` already hosts the existing SLAY'LAD website. Connecting that same domain to this digital-card project can replace or reassign the existing website. To preserve it, use a separate subdomain such as:
+Only follow it if the digital card should intentionally replace the existing website at both:
 
 ```text
-card.slaylad.com
+https://slaylad.com
+https://www.slaylad.com
 ```
 
-### Step 1: Add the subdomain in Vercel
+Replacing the root and `www` DNS records can make the existing website unavailable.
 
-1. Open the **slaylad** project in Vercel.
-2. Open **Settings**.
-3. Open **Domains**.
-4. Enter `card.slaylad.com`.
-5. Select **Add**.
+### Step 1: Add the domains in Vercel
 
-### Step 2: Read the DNS instructions shown by Vercel
+Under **Vercel → slaylad → Settings → Domains**, add:
 
-Vercel will show the DNS record required for the subdomain. It is normally a `CNAME` record, but use the exact record and value displayed in your Vercel dashboard.
-
-### Step 3: Update DNS with the domain provider
-
-1. Sign in to the company where the `slaylad.com` DNS is managed.
-2. Open the DNS management page for `slaylad.com`.
-3. Add the record shown by Vercel.
-4. For a `card.slaylad.com` CNAME record, the host or name is normally `card`.
-5. Paste the exact target value provided by Vercel.
-6. Save the DNS record.
-
-Do not delete the existing `www` or root-domain DNS records when adding the `card` subdomain.
-
-### Step 4: Wait for verification
-
-1. Return to **Vercel → Project → Settings → Domains**.
-2. Wait for the domain to show **Valid Configuration**.
-3. DNS changes can require time to propagate.
-4. Open `https://card.slaylad.com` after verification succeeds.
-5. Vercel will provision HTTPS automatically after the DNS configuration is valid.
-
-Official reference: [Set up a custom domain on Vercel](https://vercel.com/docs/domains/set-up-custom-domain).
-
-### If you intentionally want to replace `www.slaylad.com`
-
-Only follow these steps if the digital card should replace the website currently shown at `www.slaylad.com`:
-
-1. Add `slaylad.com` and `www.slaylad.com` under **Project → Settings → Domains**.
-2. If Vercel reports that either domain belongs to another project, inspect the existing project before reassigning it.
-3. Copy the exact DNS records displayed by Vercel.
-4. Update the existing DNS records at the domain provider.
-5. Confirm both domains show **Valid Configuration**.
-6. Test both the apex and `www` addresses.
-
-Reassigning these domains can make the existing website unavailable, so preserve its deployment details before making the change.
-
-## Part 7: Redeploy or restore an older version
-
-### Redeploy the current source
-
-1. Open the Vercel project.
-2. Open **Deployments**.
-3. Find the deployment you want to run again.
-4. Open its three-dot menu.
-5. Select **Redeploy**.
-6. Confirm the redeployment.
-
-### Restore a known-good deployment
-
-1. Open **Deployments**.
-2. Find a previous deployment that worked correctly.
-3. Open that deployment.
-4. Use the deployment actions to promote or roll it back to production.
-5. Confirm the production domain displays the restored version.
-
-After restoring production, fix the problem in GitHub and push a new commit so the repository remains the source of truth.
-
-Official reference: [Vercel production rollback](https://vercel.com/docs/deployments/rollback-production-deployment).
-
-## Part 8: Optional Vercel CLI deployment
-
-The GitHub import method above is recommended because it enables automatic deployments. The CLI can be used for testing or manual deployments.
-
-### Step 1: Install or run the Vercel CLI
-
-You can run the CLI without a permanent global installation:
-
-```bash
-npx vercel
+```text
+slaylad.com
+www.slaylad.com
 ```
 
-### Step 2: Complete the first-time prompts
+### Step 2: Record Vercel's required values
 
-When prompted:
+Vercel will normally request an A record for the root domain and a CNAME record for `www`. Use the exact values shown in the Vercel dashboard.
 
-1. Log in to Vercel.
-2. Confirm that the current directory should be deployed.
-3. Select the correct Vercel account or team.
-4. Choose whether to link to the existing `slaylad` project.
-5. If the GitHub-imported project already exists, link to that existing project.
+### Step 3: Change only the conflicting Hostinger records
 
-### Step 3: Create a production deployment manually
+In the Hostinger DNS Zone Editor:
 
-```bash
-npx vercel --prod
-```
+1. Find the website records for `@` and `www`.
+2. Preserve all MX and email-authentication records.
+3. Replace only the conflicting website records with the exact Vercel values.
+4. If Hostinger CDN is enabled, disable it before changing the main website records because it can control or recreate those records.
 
-The `--prod` option sends the deployment to the project's production domain.
+Do not perform this replacement merely to create `card.slaylad.com`. The `card` subdomain requires only its own CNAME record.
 
-Official reference: [Vercel CLI deploy command](https://vercel.com/docs/cli/deploy).
+## Part 11: Troubleshooting
 
-## Part 9: Troubleshooting
+### Vercel displays a 404 page
 
-### The deployed page shows 404
-
-Check that:
-
-1. `index.html` exists in the repository root.
-2. The Vercel root directory is `./`.
-3. The output directory is empty.
-4. The deployed commit contains `index.html`.
+1. Confirm `index.html` exists in the GitHub repository root.
+2. Confirm the Vercel Root Directory is `./`.
+3. Confirm Build Command is empty.
+4. Confirm Output Directory is empty.
+5. Redeploy the latest `main` commit.
 
 ### Vercel reports a missing build command
 
-This project does not require a build command. In **Settings → Build and Deployment**:
+1. Open **Vercel → slaylad → Settings → Build and Deployment**.
+2. Set Framework Preset to **Other**.
+3. Enable the Build Command override if necessary.
+4. Clear the Build Command field so it is empty.
+5. Save and redeploy.
 
-1. Set the framework preset to **Other**.
-2. Disable the build-command override.
-3. Disable the install-command override.
-4. Disable the output-directory override.
-5. Redeploy the latest commit.
+### `card.slaylad.com` shows an invalid configuration
 
-### GitHub updates do not appear on Vercel
+1. Open **Vercel → slaylad → Settings → Domains**.
+2. Copy the required CNAME target again.
+3. Open the Hostinger DNS Zone Editor.
+4. Confirm the record type is `CNAME`.
+5. Confirm the Name is only `card`.
+6. Confirm the Target exactly matches the Vercel value.
+7. Remove only duplicate or conflicting records named `card`.
+8. Allow up to 24 hours for DNS propagation.
+
+### Hostinger will not accept the CNAME record
+
+1. Search for an existing A, AAAA or CNAME record named `card`.
+2. Edit or remove that conflicting `card` record.
+3. Do not delete records with other names.
+4. Add the Vercel CNAME again.
+
+### Hostinger DNS changes have no effect
+
+Check the active nameservers. If they belong to another DNS provider, make the change at that provider rather than in Hostinger. Registering the domain at Hostinger does not guarantee that Hostinger currently hosts its DNS zone.
+
+### GitHub updates do not appear in production
 
 1. Run `git status` and confirm the change was committed.
 2. Run `git push origin main`.
-3. Confirm the commit appears on GitHub.
-4. Open **Vercel → Project → Settings → Git**.
-5. Confirm the connected repository is `Zahid8/slaylad`.
-6. Confirm the production branch is `main`.
-7. Open **Deployments** and inspect the latest deployment logs.
+3. Confirm the commit appears at <https://github.com/Zahid8/slaylad>.
+4. Confirm Vercel is connected to `Zahid8/slaylad`.
+5. Confirm the Vercel Production Branch is `main`.
+6. Open the newest deployment and read its logs.
 
-### The custom domain does not work
+### The old page still appears
 
-1. Open **Settings → Domains** in Vercel.
-2. Read the exact configuration error shown for the domain.
-3. Compare the Vercel-required DNS record with the record at the domain provider.
-4. Remove conflicting records only after confirming they are not serving the existing website or another service.
-5. Wait for DNS propagation and check again.
-
-### The old version still appears
-
-1. Confirm the newest deployment is marked **Ready** and **Production**.
-2. Refresh the page without using the browser cache.
-3. Try a private/incognito browser window.
-4. Confirm the custom domain is attached to the correct Vercel project.
-
-### A deployment fails
-
-1. Open **Vercel → Project → Deployments**.
-2. Select the failed deployment.
-3. Read the build and deployment logs.
-4. Confirm the deployment used the intended Git commit.
-5. Correct the repository or project setting that caused the failure.
-6. Push a new commit or select **Redeploy**.
+1. Confirm the latest Vercel deployment is **Ready** and **Production**.
+2. Refresh without using the browser cache.
+3. Test in a private or incognito window.
+4. Confirm `card.slaylad.com` is assigned to the correct Vercel project.
 
 ## Deployment completion checklist
 
-- [ ] The project files are committed and pushed to `origin/main`.
-- [ ] `Zahid8/slaylad` is connected to the Vercel project.
-- [ ] The framework preset is **Other**.
-- [ ] The root directory is the repository root.
-- [ ] Install, build and output-directory overrides are disabled.
-- [ ] The first production deployment is marked **Ready**.
-- [ ] The `.vercel.app` address loads the card correctly.
-- [ ] Zomato, WhatsApp, Instagram, phone and contact-download actions work.
-- [ ] The production branch is `main`.
-- [ ] A safe custom domain such as `card.slaylad.com` is configured if required.
-- [ ] A test commit pushed to `main` creates a new production deployment.
+- [ ] All project changes are committed and pushed to `origin/main`.
+- [ ] `Zahid8/slaylad` is connected to Vercel.
+- [ ] Framework Preset is **Other**.
+- [ ] Root Directory is `./`.
+- [ ] Install, build and output directory fields are empty.
+- [ ] The first `.vercel.app` deployment is **Ready**.
+- [ ] Every card action works on the Vercel address.
+- [ ] `card.slaylad.com` is added to the Vercel project.
+- [ ] Hostinger contains one correct CNAME record named `card`.
+- [ ] The root, `www` and email DNS records remain unchanged.
+- [ ] Vercel reports **Valid Configuration**.
+- [ ] `https://card.slaylad.com` opens securely.
+- [ ] The Production Branch is `main`.
+- [ ] A new push to `main` creates a production deployment automatically.
 

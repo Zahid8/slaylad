@@ -17,6 +17,7 @@
 - 2026-07-16T23:20Z [CODE] Added deploy.md with the complete GitHub-to-Vercel deployment, automatic-update, custom-domain, rollback and troubleshooting workflow.
 - 2026-07-16T23:25Z [CODE] Added tactile active-state feedback to primary orders, quick links, share, save-contact and bulk-menu controls.
 - 2026-07-16T23:30-05:00 [USER] Removed the decorative bowl-and-leaf icon above the SLAY'LAD wordmark and deleted its unused styles.
+- 2026-07-16T23:41-05:00 [USER] Rewrote deploy.md from Part 3 onward as a Hostinger-specific Vercel and DNS runbook, while preserving the local and GitHub preparation steps.
 
 [DISCOVERIES]
 
@@ -29,3 +30,4 @@
 - 2026-07-16T23:20Z [CODE] Deployment documentation now records the repository-specific Vercel settings and recommends card.slaylad.com to avoid replacing the existing www.slaylad.com site.
 - 2026-07-16T23:25Z [TOOL] Responsive checks passed at 360px, 390px, 768px and 1024px widths with no horizontal overflow; both primary order controls remain 83px tall and all seven links plus two buttons render.
 - 2026-07-16T23:30-05:00 [TOOL] Verified the icon removal in a 768px browser render; the wordmark spacing and responsive card layout remain intact.
+- 2026-07-16T23:41-05:00 [CODE] Deployment documentation now gives exact Hostinger hPanel paths and a safe card.slaylad.com CNAME workflow without changing the existing root, www or email DNS records.
