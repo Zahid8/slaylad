@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.cdnfonts.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/kg-inimitable-original" rel="stylesheet" />
@@ -28,121 +28,111 @@
       body {
         display: grid;
         background: #ffffff;
-        color: #193126;
+        color: #075d2b;
         font-family: "DM Sans", sans-serif;
         place-items: center;
       }
 
-      .card {
-        position: relative;
+      .banner {
+        display: flex;
         width: 1080px;
-        height: 550px;
-        overflow: hidden;
-        border: 1px solid rgba(0, 128, 0, 0.15);
-        border-radius: 30px;
-        background: #ffffff;
-      }
-
-      .topline {
-        height: 9px;
-        background: #008000;
-      }
-
-      .hero {
-        height: 335px;
-        padding: 35px 56px 28px;
+        height: 480px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 32px 58px 28px;
+        border-radius: 32px;
         background: #f3f7ed;
-        text-align: center;
       }
 
       h1 {
         margin: 0;
         color: #008000;
         font-family: "KG Inimitable Original", sans-serif;
-        font-size: 96px;
+        font-size: 188px;
         font-weight: 400;
         letter-spacing: 0.025em;
-        line-height: 1;
+        line-height: 0.96;
+      }
+
+      .tagline-row {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 130px auto 130px;
+        gap: 28px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 9px;
+      }
+
+      .rule {
+        width: 130px;
+        height: 5px;
+        background: #4f9a43;
       }
 
       .tagline {
-        margin: 13px 0 0;
+        margin: 0;
         color: #075d2b;
         font-family: "Manrope", sans-serif;
-        font-size: 22px;
+        font-size: 31px;
         font-weight: 800;
-        letter-spacing: 0.23em;
+        letter-spacing: 0.035em;
+        line-height: 1;
         text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .descriptor-row {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
       }
 
       .descriptor {
-        margin: 8px 0 0;
-        color: #66746d;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-      }
-
-      .values {
-        display: flex;
-        gap: 14px;
-        justify-content: center;
-        margin-top: 27px;
-      }
-
-      .value {
-        display: flex;
-        min-width: 185px;
-        gap: 9px;
-        align-items: center;
-        justify-content: center;
-        padding: 9px 15px;
-        border: 1px solid rgba(0, 128, 0, 0.16);
-        border-radius: 999px;
-        background: #ffffff;
-        color: #075d2b;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-      }
-
-      .value-mark {
-        color: #008000;
+        margin: 0;
+        color: #087323;
         font-family: "Manrope", sans-serif;
-        font-weight: 800;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.31em;
+        line-height: 1;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .sprig {
+        width: 86px;
+        height: 34px;
+        color: #4f9a43;
+      }
+
+      .sprig.right {
+        transform: scaleX(-1);
       }
 
       .orders {
-        height: 206px;
-        padding: 27px 56px 28px;
-        background: #ffffff;
-      }
-
-      .order-label {
-        margin: 0 0 14px;
-        color: #66746d;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .order-row {
         display: grid;
+        width: 100%;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 18px;
+        margin-top: 38px;
       }
 
       .order {
-        display: flex;
-        height: 92px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 29px;
-        border-radius: 18px;
+        display: grid;
+        height: 84px;
+        border-radius: 999px;
         color: #ffffff;
+        font-family: "Manrope", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.015em;
+        place-items: center;
+        text-transform: uppercase;
+        white-space: nowrap;
       }
 
       .zomato {
@@ -152,64 +142,31 @@
       .whatsapp {
         background: #008000;
       }
-
-      .order strong,
-      .order span {
-        display: block;
-      }
-
-      .order strong {
-        font-family: "Manrope", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-      }
-
-      .order span {
-        margin-top: 4px;
-        color: rgba(255, 255, 255, 0.84);
-        font-size: 14px;
-      }
-
-      .arrow {
-        font-family: "Manrope", sans-serif;
-        font-size: 29px;
-        font-weight: 600;
-      }
     </style>
   </head>
   <body>
-    <main class="card">
-      <div class="topline"></div>
-      <section class="hero">
-        <h1>SLAY'LAD</h1>
+    <main class="banner">
+      <h1>SLAY'LAD</h1>
+      <div class="tagline-row">
+        <span class="rule"></span>
         <p class="tagline">Eat clean. Slay hard.</p>
+        <span class="rule"></span>
+      </div>
+      <div class="descriptor-row">
+        <svg class="sprig" aria-hidden="true" viewBox="0 0 86 34">
+          <path d="M5 29C28 29 45 21 77 5" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <path d="M20 26C8 24 5 18 5 11c10 0 17 5 15 15ZM35 22c-9-5-10-12-7-18 9 3 13 10 7 18ZM49 16c-5-8-2-14 3-18 7 6 7 12-3 18ZM59 13c1-10 7-14 14-14 0 9-5 15-14 14Z" fill="currentColor" />
+        </svg>
         <p class="descriptor">Healthy meal kitchen</p>
-        <div class="values">
-          <div class="value"><span class="value-mark">✦</span> Fresh ingredients</div>
-          <div class="value"><span class="value-mark">P+</span> High protein</div>
-          <div class="value"><span class="value-mark">½</span> Balanced meals</div>
-          <div class="value"><span class="value-mark">♥</span> Made with love</div>
-        </div>
-      </section>
-      <section class="orders">
-        <p class="order-label">Choose how you'd like to order</p>
-        <div class="order-row">
-          <div class="order zomato">
-            <div>
-              <strong>Order a single meal</strong>
-              <span>Delivery available on Zomato</span>
-            </div>
-            <div class="arrow">↗</div>
-          </div>
-          <div class="order whatsapp">
-            <div>
-              <strong>Planning a bulk order?</strong>
-              <span>Connect with us on WhatsApp</span>
-            </div>
-            <div class="arrow">↗</div>
-          </div>
-        </div>
-      </section>
+        <svg class="sprig right" aria-hidden="true" viewBox="0 0 86 34">
+          <path d="M5 29C28 29 45 21 77 5" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <path d="M20 26C8 24 5 18 5 11c10 0 17 5 15 15ZM35 22c-9-5-10-12-7-18 9 3 13 10 7 18ZM49 16c-5-8-2-14 3-18 7 6 7 12-3 18ZM59 13c1-10 7-14 14-14 0 9-5 15-14 14Z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="orders">
+        <div class="order zomato">Single meals • Zomato</div>
+        <div class="order whatsapp">Bulk orders • WhatsApp</div>
+      </div>
     </main>
   </body>
 </html>
