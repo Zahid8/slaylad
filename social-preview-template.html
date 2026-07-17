@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>SLAY'LAD social preview source</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/kg-inimitable-original" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        background: #ffffff;
+        color: #193126;
+        font-family: "DM Sans", sans-serif;
+        place-items: center;
+      }
+
+      .card {
+        position: relative;
+        width: 1080px;
+        height: 550px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 128, 0, 0.15);
+        border-radius: 30px;
+        background: #ffffff;
+      }
+
+      .topline {
+        height: 9px;
+        background: #008000;
+      }
+
+      .hero {
+        height: 335px;
+        padding: 35px 56px 28px;
+        background: #f3f7ed;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        color: #008000;
+        font-family: "KG Inimitable Original", sans-serif;
+        font-size: 96px;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        line-height: 1;
+      }
+
+      .tagline {
+        margin: 13px 0 0;
+        color: #075d2b;
+        font-family: "Manrope", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.23em;
+        text-transform: uppercase;
+      }
+
+      .descriptor {
+        margin: 8px 0 0;
+        color: #66746d;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+
+      .values {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        margin-top: 27px;
+      }
+
+      .value {
+        display: flex;
+        min-width: 185px;
+        gap: 9px;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 15px;
+        border: 1px solid rgba(0, 128, 0, 0.16);
+        border-radius: 999px;
+        background: #ffffff;
+        color: #075d2b;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .value-mark {
+        color: #008000;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+      }
+
+      .orders {
+        height: 206px;
+        padding: 27px 56px 28px;
+        background: #ffffff;
+      }
+
+      .order-label {
+        margin: 0 0 14px;
+        color: #66746d;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .order-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .order {
+        display: flex;
+        height: 92px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 29px;
+        border-radius: 18px;
+        color: #ffffff;
+      }
+
+      .zomato {
+        background: #e23744;
+      }
+
+      .whatsapp {
+        background: #008000;
+      }
+
+      .order strong,
+      .order span {
+        display: block;
+      }
+
+      .order strong {
+        font-family: "Manrope", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .order span {
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 14px;
+      }
+
+      .arrow {
+        font-family: "Manrope", sans-serif;
+        font-size: 29px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="topline"></div>
+      <section class="hero">
+        <h1>SLAY'LAD</h1>
+        <p class="tagline">Eat clean. Slay hard.</p>
+        <p class="descriptor">Healthy meal kitchen</p>
+        <div class="values">
+          <div class="value"><span class="value-mark">✦</span> Fresh ingredients</div>
+          <div class="value"><span class="value-mark">P+</span> High protein</div>
+          <div class="value"><span class="value-mark">½</span> Balanced meals</div>
+          <div class="value"><span class="value-mark">♥</span> Made with love</div>
+        </div>
+      </section>
+      <section class="orders">
+        <p class="order-label">Choose how you'd like to order</p>
+        <div class="order-row">
+          <div class="order zomato">
+            <div>
+              <strong>Order a single meal</strong>
+              <span>Delivery available on Zomato</span>
+            </div>
+            <div class="arrow">↗</div>
+          </div>
+          <div class="order whatsapp">
+            <div>
+              <strong>Planning a bulk order?</strong>
+              <span>Connect with us on WhatsApp</span>
+            </div>
+            <div class="arrow">↗</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
