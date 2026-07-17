@@ -114,25 +114,59 @@
       }
 
       .orders {
-        display: grid;
         width: 100%;
+        margin-top: 16px;
+      }
+
+      .order-label {
+        margin: 0 0 10px 8px;
+        color: #66746d;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .order-row {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 18px;
-        margin-top: 38px;
       }
 
       .order {
-        display: grid;
+        display: flex;
         height: 84px;
-        border-radius: 999px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 27px;
+        border-radius: 18px;
         color: #ffffff;
         font-family: "Manrope", sans-serif;
-        font-size: 22px;
+      }
+
+      .order strong,
+      .order span {
+        display: block;
+      }
+
+      .order strong {
+        font-size: 20px;
         font-weight: 800;
-        letter-spacing: 0.015em;
-        place-items: center;
-        text-transform: uppercase;
-        white-space: nowrap;
+        line-height: 1.15;
+      }
+
+      .order span {
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .order-arrow {
+        font-family: "Manrope", sans-serif;
+        font-size: 29px;
+        font-weight: 600;
       }
 
       .zomato {
@@ -164,8 +198,23 @@
         </svg>
       </div>
       <div class="orders">
-        <div class="order zomato">Single meals • Zomato</div>
-        <div class="order whatsapp">Bulk orders • WhatsApp</div>
+        <p class="order-label">Choose how you'd like to order</p>
+        <div class="order-row">
+          <div class="order zomato">
+            <div>
+              <strong>Order a single meal</strong>
+              <span>Delivery available on Zomato</span>
+            </div>
+            <div class="order-arrow">↗</div>
+          </div>
+          <div class="order whatsapp">
+            <div>
+              <strong>Planning a bulk order?</strong>
+              <span>Connect with us on WhatsApp</span>
+            </div>
+            <div class="order-arrow">↗</div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
