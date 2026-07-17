@@ -19,6 +19,8 @@ Then open <http://localhost:4173>.
 
 This project has no build step. Import the folder or Git repository in Vercel and select **Other** as the framework preset. Leave the build command and output directory empty, then deploy.
 
+For the complete GitHub, Vercel, custom-domain, update and troubleshooting instructions, see [deploy.md](./deploy.md).
+
 With the Vercel CLI:
 
 ```bash
