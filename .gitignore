@@ -1,0 +1,43 @@
+# Agent instructions, state, logs, and generated knowledge graphs
+/.agent/
+/.agents/
+/.codex/
+/.omx/
+/.claude/
+/.cursor/
+/.windsurf/
+/.gemini/
+/.copilot/
+/.continue/
+/.cline/
+/.roo/
+/.openhands/
+/.factory/
+/graphify-out/
+/AGENTS.md
+/CLAUDE.md
+/GEMINI.md
+/notepad.md
+/.github/copilot-instructions.md
+/.aider/
+/.aider.chat.history.md
+/.aider.input.history
+
+# Local Vercel project metadata
+/.vercel/
+
+# Dependencies, build output, and caches
+/node_modules/
+/dist/
+/build/
+/.cache/
+*.log
+
+# Editor and operating-system files
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
